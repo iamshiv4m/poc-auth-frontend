@@ -10,28 +10,7 @@ const GoogleSignIn = () => {
   const [access_token, setAccess_token] = useState<string>("");
 
   const callGoogleAuthSignIn = async (data: any) => {
-    const url = googleAuthSignIn();
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Client-Type": "OFFLINE_CENTER_CLIENT",
-          refererX: "https://classroomX.penpencil.co/",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const result = await response.json();
-      console.log("Response data:", result);
-      return result;
-    } catch (error) {
-      console.error("Error during API call:", error);
-    }
+    console.log("data: ", data);
   };
 
   useEffect(() => {
@@ -71,10 +50,6 @@ const GoogleSignIn = () => {
         setSignedIn(true);
         // Call the API with the data object
         const apiResponse = await callGoogleAuthSignIn(data);
-        if (apiResponse?.data) {
-          setAccess_token(apiResponse?.data?.access_token);
-        }
-        console.log("API response: ", apiResponse?.data?.access_token);
       }
     };
 
