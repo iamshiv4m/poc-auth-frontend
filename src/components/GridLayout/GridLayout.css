@@ -1,0 +1,71 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Adjust the number of columns as needed */
+  gap: 10px;
+  padding: 20px;
+  background-color: #2d2d2d; /* Background color for the container */
+}
+
+.grid-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #1e1e1e; /* Background color for the items */
+  color: #ffffff; /* Text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.lecture-name {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.item-icons {
+  display: flex;
+  gap: 5px;
+}
+
+.icon {
+  font-size: 1.2em;
+}
+
+.item-image {
+  width: 100%;
+  height: auto;
+}
+
+.item-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.location {
+  font-weight: bold;
+}
+
+.count {
+  background-color: #ff5722;
+  color: #fff;
+  padding: 0 5px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  display: inline-block;
+  text-align: center;
+}
